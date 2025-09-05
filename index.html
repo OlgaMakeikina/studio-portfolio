@@ -1,0 +1,237 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Студия разработки — сайты, боты, поддержка | Make in Site</title>
+  <meta name="description" content="Лендинги, WordPress, Telegram-боты, поддержка и хостинг. Проекты под любой бюджет и сложность. RU / PT-BR." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon (SVG data URI) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%230EA5E9"/><path d="M14 44 L26 20 L32 32 L38 20 L50 44" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Студия разработки — сайты, боты, поддержка" />
+  <meta property="og:description" content="Сайты под ключ, Telegram-боты, поддержка и хостинг. RU/PT-BR." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Make in Site",
+    "url": "https://example.com",
+    "areaServed": ["BR", "RU", "PT"],
+    "sameAs": ["https://t.me/makeinsite"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Пропустить к содержанию</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="logo">Make in Site</div>
+      <nav class="nav" aria-label="Основное меню">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="Меню">☰</button>
+        <ul id="navList">
+          <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+          <li><a href="#portfolio" data-i18n="nav.portfolio">Портфолио</a></li>
+          <li><a href="#process" data-i18n="nav.process">Процесс</a></li>
+          <li><a href="#pricing" data-i18n="nav.pricing">Цены</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#contacts" class="btn btn--small" data-i18n="nav.cta">Обсудить проект</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Переключение языка">
+        <button data-lang="ru" class="lang is-active">RU</button>
+        <button data-lang="pt" class="lang">PT-BR</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 id="heroTitle" data-i18n="hero.title">
+            Студия разработки: сайты, Telegram-боты, поддержка, хостинг, приложения
+          </h1>
+          <p class="lead" data-i18n="hero.subtitle">
+            Проекты под любой бюджет и сложность. От лендингов и WordPress до кастомных решений.
+          </p>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn" data-i18n="hero.primary">Смотреть портфолио</a>
+            <a href="#contacts" class="btn btn--ghost" data-i18n="hero.secondary">Получить консультацию</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <!-- Декоративная сетка -->
+          <svg viewBox="0 0 300 240" class="grid">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="currentColor" stop-opacity="0.25"/>
+                <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g stroke="currentColor" fill="none" stroke-width="0.6" opacity="0.6">
+              <!-- Вертикальные -->
+              <path d="M0 0V240" />
+              <path d="M30 0V240" />
+              <path d="M60 0V240" />
+              <path d="M90 0V240" />
+              <path d="M120 0V240" />
+              <path d="M150 0V240" />
+              <path d="M180 0V240" />
+              <path d="M210 0V240" />
+              <path d="M240 0V240" />
+              <path d="M270 0V240" />
+            </g>
+            <rect x="0" y="0" width="300" height="240" fill="url(#g)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section id="services" class="section" aria-labelledby="servicesTitle">
+      <div class="container">
+        <h2 id="servicesTitle" class="section-title" data-i18n="services.title">Услуги</h2>
+        <div class="cards services-grid">
+          <!-- Карточки услуг генерируются из JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОРТФОЛИО -->
+    <section id="portfolio" class="section" aria-labelledby="portfolioTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="portfolioTitle" class="section-title" data-i18n="portfolio.title">Портфолио</h2>
+          <div class="chips" role="tablist" aria-label="Фильтр портфолио">
+            <button class="chip is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="portfolio.filters.all">Все</button>
+            <button class="chip" data-filter="website" role="tab" aria-selected="false" data-i18n="portfolio.filters.websites">Сайты</button>
+            <button class="chip" data-filter="bot" role="tab" aria-selected="false" data-i18n="portfolio.filters.bots">Боты</button>
+            <button class="chip" data-filter="app" role="tab" aria-selected="false" data-i18n="portfolio.filters.apps">Приложения</button>
+          </div>
+        </div>
+        <div class="cards portfolio-grid" id="portfolioGrid" aria-live="polite">
+          <!-- Проекты рендерятся из JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОЦЕСС -->
+    <section id="process" class="section" aria-labelledby="processTitle">
+      <div class="container">
+        <h2 id="processTitle" class="section-title" data-i18n="process.title">Как мы работаем</h2>
+        <ol class="process-grid">
+          <!-- Шаги из JS -->
+        </ol>
+      </div>
+    </section>
+
+    <!-- ЦЕНЫ -->
+    <section id="pricing" class="section" aria-labelledby="pricingTitle">
+      <div class="container">
+        <h2 id="pricingTitle" class="section-title" data-i18n="pricing.title">Пакеты и цены</h2>
+        <div class="cards pricing-grid">
+          <!-- Пакеты из JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="faqTitle">
+      <div class="container">
+        <h2 id="faqTitle" class="section-title" data-i18n="faq.title">Ответы на вопросы</h2>
+        <div class="accordion" id="faqList">
+          <!-- FAQ из JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="section" aria-labelledby="contactsTitle">
+      <div class="container">
+        <h2 id="contactsTitle" class="section-title" data-i18n="contacts.title">Контакты</h2>
+        <div class="contacts">
+          <div class="contact-actions">
+            <a class="btn" href="mailto:hello@site.dev">✉️ Email</a>
+            <a class="btn" href="tel:+5548999999999">📞 +55 48 99999-9999</a>
+            <a class="btn btn--ghost" href="https://t.me/makeinsite" target="_blank" rel="noopener">Telegram</a>
+            <a class="btn btn--ghost" href="https://wa.me/5548999999999" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <ul class="start-steps">
+            <li data-i18n="contacts.steps.1">Напишите нам и кратко опишите задачу</li>
+            <li data-i18n="contacts.steps.2">Пришлите 2–3 референса</li>
+            <li data-i18n="contacts.steps.3">Получите смету в 1–2 вариантах</li>
+          </ul>
+          <p class="legal">MEI / CNPJ 00.000.000/0001-00 • <button class="link" data-open="policy" data-i18n="contacts.policy">Политика конфиденциальности</button></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Make in Site</div>
+      <nav aria-label="Нижнее меню">
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#portfolio" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="#process" data-i18n="nav.process">Процесс</a>
+        <a href="#pricing" data-i18n="nav.pricing">Цены</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="socials">
+        <a href="https://t.me/makeinsite" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Portfolio details -->
+  <dialog class="modal" id="projectModal" aria-labelledby="projectTitle">
+    <button class="modal-close" data-close>✕</button>
+    <article class="modal-body">
+      <h3 id="projectTitle"></h3>
+      <p id="projectShort"></p>
+      <div class="modal-columns">
+        <div>
+          <h4 data-i18n="portfolio.modal.challenge">Задача</h4>
+          <p id="projectChallenge"></p>
+        </div>
+        <div>
+          <h4 data-i18n="portfolio.modal.solution">Решение</h4>
+          <p id="projectSolution"></p>
+        </div>
+        <div>
+          <h4 data-i18n="portfolio.modal.result">Результат</h4>
+          <p id="projectResult"></p>
+        </div>
+      </div>
+      <ul class="tags" id="projectTags"></ul>
+    </article>
+  </dialog>
+
+  <!-- Modal: Privacy policy -->
+  <dialog class="modal" id="policyModal" aria-labelledby="policyTitle">
+    <button class="modal-close" data-close>✕</button>
+    <article class="modal-body">
+      <h3 id="policyTitle" data-i18n="policy.title">Политика конфиденциальности</h3>
+      <p data-i18n="policy.p1">Мы не собираем персональные данные на этом сайте. Контакты осуществляются через внешние каналы связи.</p>
+      <p data-i18n="policy.p2">Файлы cookie могут использоваться для базовой аналитики посещений.</p>
+      <p data-i18n="policy.p3">По вопросам напишите на email или в мессенджеры.</p>
+    </article>
+  </dialog>
+
+  <button class="to-top" aria-label="Вверх">↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
