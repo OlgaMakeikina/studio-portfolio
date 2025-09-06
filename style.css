@@ -79,7 +79,14 @@ button{font:inherit}
 .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .pricing-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;counter-reset:step}
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  counter-reset:step;
+  max-width:1200px;
+  margin:0 auto;
+}
 
 .card{
   background:var(--card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
@@ -117,14 +124,47 @@ button{font:inherit}
 
 .process-grid li{
   background:var(--card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--border);border-radius:16px;padding:16px;position:relative;
+  border:1px solid var(--border);border-radius:20px;padding:32px 24px;position:relative;
+  transition:transform .3s ease, box-shadow .3s ease;
+  list-style:none;
+}
+.process-grid li:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,210,255,.2);
 }
 .process-grid li::before{
   counter-increment:step;content:counter(step);
-  position:absolute;top:-10px;left:-10px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;
-  display:grid;place-items:center;font-weight:700;box-shadow:0 10px 20px -10px var(--ring)
+  position:absolute;top:-15px;left:-15px;
+  width:50px;height:50px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--secondary));
+  color:#fff;display:grid;place-items:center;
+  font-weight:700;font-size:18px;
+  box-shadow:0 8px 20px rgba(0,210,255,.4);
+  border:3px solid var(--bg);
 }
-.process-grid h3{margin:6px 0 10px}
+.process-grid h3{
+  margin:20px 0 16px;font-size:22px;font-weight:600;
+  color:var(--accent);
+}
+.process-grid .list{
+  margin:0;padding:0;
+}
+.process-grid .list li{
+  background:none;border:none;border-radius:0;
+  padding:8px 0;margin:0;position:static;
+  color:var(--muted);font-size:16px;
+  border-bottom:1px solid var(--border);
+}
+.process-grid .list li:last-child{
+  border-bottom:none;
+}
+.process-grid .list li::before{
+  content:"✓";position:static;
+  width:auto;height:auto;border-radius:0;
+  background:none;color:var(--success);
+  font-weight:bold;margin-right:8px;
+  box-shadow:none;border:none;
+}
 
 .pricing .price{font-size:28px;font-weight:700;margin:8px 0}
 .pricing .muted{color:var(--muted);font-size:14px}
@@ -165,7 +205,7 @@ button{font:inherit}
 
 @media (max-width:1000px){
   .services-grid,.portfolio-grid,.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .process-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero-inner{grid-template-columns:1fr}
   .hero-art{order:-1}
 }
