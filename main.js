@@ -1,8 +1,7 @@
 // script.js
 /* ============== i18n ============== */
 const i18n = {
-  ru: {
-    nav: { services:"Услуги", about:"О нас", portfolio:"Портфолио", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
+  nav: { services:"Услуги", about:"О нас", portfolio:"Портфолио", reviews:"Отзывы", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
     hero: {
       title:"Студия разработки: сайты, Telegram-боты, поддержка, хостинг, приложения",
       subtitle:"Проекты под любой бюджет и сложность. От лендингов и WordPress до кастомных решений.",
@@ -31,6 +30,7 @@ const i18n = {
     },
     process:{ title:"Как мы работаем" },
     pricing:{ title:"Пакеты и цены" },
+    reviews:{ title:"Отзывы клиентов" },
     faq:{ title:"Ответы на вопросы" },
     contacts:{
       title:"Контакты",
@@ -43,50 +43,6 @@ const i18n = {
       p2:"Файлы cookie могут использоваться для базовой аналитики посещений.",
       p3:"По вопросам напишите на email или в мессенджеры."
     }
-  },
-  pt: {
-    nav: { services:"Serviços", about:"Sobre nós", portfolio:"Portfólio", process:"Processo", pricing:"Preços", faq:"FAQ", cta:"Discutir projeto" },
-    hero: {
-      title:"Estúdio de desenvolvimento: sites, bots no Telegram, suporte, hospedagem e apps",
-      subtitle:"Projetos para todo orçamento e nível de complexidade. De landing pages e WordPress a soluções customizadas.",
-      primary:"Ver portfólio",
-      secondary:"Solicitar consultoria"
-    },
-    services: { title:"Serviços" },
-    about: {
-      title:"Sobre nós",
-      intro:"Somos uma equipe de desenvolvedores que cria soluções digitais para negócios de qualquer escala.",
-      main:"Nosso estúdio é especializado no desenvolvimento de sites, bots do Telegram, suporte técnico e hospedagem. Trabalhamos com clientes do Brasil, Rússia e outros países, oferecendo soluções para qualquer orçamento e complexidade.",
-      approach:"Não apenas escrevemos código — resolvemos problemas de negócio. Cada projeto começa com uma análise profunda de suas necessidades e termina com uma ferramenta funcional que traz resultados.",
-      features: {
-        speed: { title:"Início rápido", text:"Da ideia ao lançamento — 7-30 dias dependendo da complexidade" },
-        global: { title:"Experiência internacional", text:"Trabalhamos com clientes do Brasil, Rússia, suportamos RU/PT/EN" },
-        support: { title:"Suporte confiável", text:"Pacotes SLA, monitoramento, atualizações — seu site sempre funcionando" },
-        innovation: { title:"Tecnologias modernas", text:"De CMS clássicos a soluções customizadas e integrações de IA" }
-      },
-      stats: { projects:"Projetos", years:"Anos no mercado", support:"Suporte", satisfaction:"Clientes satisfeitos" },
-      cta: { title:"Pronto para começar o projeto?", text:"Conte sobre sua tarefa e ofereceremos a solução ideal", button:"Discutir projeto" }
-    },
-    portfolio: {
-      title:"Portfólio",
-      filters:{ all:"Todos", websites:"Sites", bots:"Bots", apps:"Apps" },
-      modal:{ challenge:"Desafio", solution:"Solução", result:"Resultado" }
-    },
-    process:{ title:"Como trabalhamos" },
-    pricing:{ title:"Planos e preços" },
-    faq:{ title:"Perguntas frequentes" },
-    contacts:{
-      title:"Contatos",
-      steps:{ 1:"Envie uma mensagem e descreva a tarefa", 2:"Compartilhe 2–3 referências", 3:"Receba um orçamento em 1–2 opções" },
-      policy:"Política de Privacidade"
-    },
-    policy:{
-      title:"Política de Privacidade",
-      p1:"Não coletamos dados pessoais neste site. O contato é feito por canais externos.",
-      p2:"Cookies podem ser usados para análise básica de visitas.",
-      p3:"Em caso de dúvidas, escreva por email ou mensageiros."
-    }
-  }
 };
 
 /* ============== Data ============== */
@@ -697,16 +653,16 @@ function renderFAQ(){
 }
 
 /* ============== Language switch ============== */
-function applyI18n(lang){
+function applyI18n(){
   // статические надписи
   $$('[data-i18n]').forEach(node=>{
     const path = node.getAttribute('data-i18n').split('.');
-    let cur = i18n[lang];
+    let cur = i18n;
     for (const key of path) cur = cur?.[key];
     if (typeof cur === "string") node.textContent = cur;
   });
-  renderServices(lang);
-  renderProcess(lang);
+  renderServices('ru');
+  renderProcess('ru');
 }
 
 /* ============== UI behaviors ============== */
@@ -793,6 +749,95 @@ function toTop(){
   btn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
 }
 
+function reviewsSlider(){
+  const slider = $('#reviewsSlider');
+  const slides = [...slider.querySelectorAll('.review-slide')];
+  const dots = [...document.querySelectorAll('.review-dot')];
+  const prevBtn = $('.prev-btn');
+  const nextBtn = $('.next-btn');
+  
+  let currentSlide = 0;
+  let autoSlideInterval;
+  
+  function updateSlider() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active', 'prev', 'next');
+      
+      if (index === currentSlide) {
+        slide.classList.add('active');
+      } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+        slide.classList.add('prev');
+      } else if (index === (currentSlide + 1) % slides.length) {
+        slide.classList.add('next');
+      }
+    });
+    
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+  }
+  
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+  
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+  }
+  
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 4000);
+  }
+  
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+  
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    setTimeout(startAutoSlide, 6000);
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    setTimeout(startAutoSlide, 6000);
+  });
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      stopAutoSlide();
+      setTimeout(startAutoSlide, 6000);
+    });
+  });
+  
+  const reviewsSection = $('#reviews');
+  if (reviewsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAutoSlide();
+        } else {
+          stopAutoSlide();
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    observer.observe(reviewsSection);
+  }
+  
+  updateSlider();
+}
+
 /* ============== Init ============== */
 document.addEventListener('DOMContentLoaded', ()=>{
   // год в футере
@@ -805,7 +850,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   renderProcess('ru');
   renderPricing();
   renderFAQ();
-  applyI18n('ru');
+  applyI18n();
 
   // поведение
   smoothAnchors();
@@ -814,14 +859,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   modals();
   faq();
   toTop();
-
-  // переключение языков
-  $$('.lang').forEach(b=>{
-    b.addEventListener('click', ()=>{
-      $$('.lang').forEach(x=>x.classList.remove('is-active'));
-      b.classList.add('is-active');
-      const lang = b.dataset.lang;
-      applyI18n(lang);
-    });
-  });
+  reviewsSlider();
 });

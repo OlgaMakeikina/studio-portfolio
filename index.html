@@ -43,13 +43,14 @@
           <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
           <li><a href="#about" data-i18n="nav.about">О нас</a></li>
           <li><a href="#portfolio" data-i18n="nav.portfolio">Портфолио</a></li>
+          <li><a href="#reviews" data-i18n="nav.reviews">Отзывы</a></li>
           <li><a href="#process" data-i18n="nav.process">Процесс</a></li>
           <li><a href="#pricing" data-i18n="nav.pricing">Цены</a></li>
           <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           <li><a href="#contacts" class="btn btn--small" data-i18n="nav.cta">Обсудить проект</a></li>
         </ul>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Переключение языка">
+      <div class="lang-switch" role="group" aria-label="Переключение языка" style="display: none;">
         <button data-lang="ru" class="lang is-active">RU</button>
         <button data-lang="pt" class="lang">PT-BR</button>
       </div>
@@ -246,6 +247,135 @@
         <ol class="process-grid">
           <!-- Шаги из JS -->
         </ol>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews" class="section reviews-section" aria-labelledby="reviewsTitle">
+      <div class="container">
+        <h2 id="reviewsTitle" class="section-title" data-i18n="reviews.title">Отзывы клиентов</h2>
+        <div class="reviews-slider-container">
+          <div class="reviews-circular-slider" id="reviewsSlider">
+            <div class="review-slide active">
+              <div class="review-avatar-wrapper">
+                <div class="futuristic-frame">
+                  <svg class="frame-decoration" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                    <path d="M15 60 L25 50 L25 70 Z" fill="currentColor" opacity="0.6"/>
+                    <path d="M105 60 L95 50 L95 70 Z" fill="currentColor" opacity="0.6"/>
+                    <circle cx="60" cy="15" r="3" fill="currentColor" opacity="0.8"/>
+                    <circle cx="60" cy="105" r="3" fill="currentColor" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="review-avatar">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23e2e8f0'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%2394a3b8'/%3E%3Cpath d='M20 85 Q50 65 80 85' fill='%2394a3b8'/%3E%3C/svg%3E" alt="Анна Петрова">
+                </div>
+              </div>
+              <div class="review-content">
+                <blockquote class="review-text">
+                  "Ребята сделали потрясающий сайт для нашего бутика. Заказы выросли на 40% уже в первый месяц!"
+                </blockquote>
+                <cite class="review-author">
+                  <strong>Анна Петрова</strong>
+                  <span>Владелица бутика "Стиль"</span>
+                </cite>
+              </div>
+            </div>
+            
+            <div class="review-slide">
+              <div class="review-avatar-wrapper">
+                <div class="futuristic-frame">
+                  <svg class="frame-decoration" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                    <path d="M15 60 L25 50 L25 70 Z" fill="currentColor" opacity="0.6"/>
+                    <path d="M105 60 L95 50 L95 70 Z" fill="currentColor" opacity="0.6"/>
+                    <circle cx="60" cy="15" r="3" fill="currentColor" opacity="0.8"/>
+                    <circle cx="60" cy="105" r="3" fill="currentColor" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="review-avatar">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23ddd6fe'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%23a78bfa'/%3E%3Cpath d='M20 85 Q50 65 80 85' fill='%23a78bfa'/%3E%3C/svg%3E" alt="Максим Сидоров">
+                </div>
+              </div>
+              <div class="review-content">
+                <blockquote class="review-text">
+                  "Telegram-бот для автоматизации заказов работает безупречно. Экономим по 3 часа в день на обработке заявок."
+                </blockquote>
+                <cite class="review-author">
+                  <strong>Максим Сидоров</strong>
+                  <span>Директор IT-компании</span>
+                </cite>
+              </div>
+            </div>
+            
+            <div class="review-slide">
+              <div class="review-avatar-wrapper">
+                <div class="futuristic-frame">
+                  <svg class="frame-decoration" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                    <path d="M15 60 L25 50 L25 70 Z" fill="currentColor" opacity="0.6"/>
+                    <path d="M105 60 L95 50 L95 70 Z" fill="currentColor" opacity="0.6"/>
+                    <circle cx="60" cy="15" r="3" fill="currentColor" opacity="0.8"/>
+                    <circle cx="60" cy="105" r="3" fill="currentColor" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="review-avatar">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23fecaca'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%23f87171'/%3E%3Cpath d='M20 85 Q50 65 80 85' fill='%23f87171'/%3E%3C/svg%3E" alt="Елена Иванова">
+                </div>
+              </div>
+              <div class="review-content">
+                <blockquote class="review-text">
+                  "Быстро, качественно, в рамках бюджета. Поддержка работает 24/7 - это очень важно для нашего бизнеса."
+                </blockquote>
+                <cite class="review-author">
+                  <strong>Елена Иванова</strong>
+                  <span>Основатель стартапа</span>
+                </cite>
+              </div>
+            </div>
+            
+            <div class="review-slide">
+              <div class="review-avatar-wrapper">
+                <div class="futuristic-frame">
+                  <svg class="frame-decoration" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+                    <path d="M15 60 L25 50 L25 70 Z" fill="currentColor" opacity="0.6"/>
+                    <path d="M105 60 L95 50 L95 70 Z" fill="currentColor" opacity="0.6"/>
+                    <circle cx="60" cy="15" r="3" fill="currentColor" opacity="0.8"/>
+                    <circle cx="60" cy="105" r="3" fill="currentColor" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="review-avatar">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23bbf7d0'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%2334d399'/%3E%3Cpath d='M20 85 Q50 65 80 85' fill='%2334d399'/%3E%3C/svg%3E" alt="Дмитрий Волков">
+                </div>
+              </div>
+              <div class="review-content">
+                <blockquote class="review-text">
+                  "Мигрировали с WordPress на кастомное решение. Сайт стал работать в 3 раза быстрее, конверсия выросла."
+                </blockquote>
+                <cite class="review-author">
+                  <strong>Дмитрий Волков</strong>
+                  <span>Руководитель e-commerce</span>
+                </cite>
+              </div>
+            </div>
+          </div>
+          
+          <div class="reviews-controls">
+            <button class="review-nav-btn prev-btn" aria-label="Предыдущий отзыв">‹</button>
+            <div class="reviews-dots">
+              <button class="review-dot active" data-slide="0"></button>
+              <button class="review-dot" data-slide="1"></button>
+              <button class="review-dot" data-slide="2"></button>
+              <button class="review-dot" data-slide="3"></button>
+            </div>
+            <button class="review-nav-btn next-btn" aria-label="Следующий отзыв">›</button>
+          </div>
+        </div>
       </div>
     </section>
 
