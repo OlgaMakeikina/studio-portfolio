@@ -1,7 +1,7 @@
 // script.js
 /* ============== i18n ============== */
 const i18n = {
-  nav: { services:"Услуги", about:"О нас", portfolio:"Портфолио", reviews:"Отзывы", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
+  nav: { services:"Услуги", about:"О нас", team:"Команда", portfolio:"Портфолио", reviews:"Отзывы", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
     hero: {
       title:"Студия разработки: сайты, Telegram-боты, поддержка, хостинг, приложения",
       subtitle:"Проекты под любой бюджет и сложность. От лендингов и WordPress до кастомных решений.",
@@ -27,6 +27,27 @@ const i18n = {
       title:"Портфолио",
       filters:{ all:"Все", websites:"Сайты", bots:"Боты", apps:"Приложения" },
       modal:{ challenge:"Задача", solution:"Решение", result:"Результат" }
+    },
+    team: {
+      title:"Наша команда",
+      subtitle:"Профессионалы, которые воплощают ваши идеи в жизнь",
+      roles: {
+        lead:"Ведущий разработчик",
+        designer:"UI/UX Дизайнер", 
+        backend:"Backend разработчик",
+        manager:"Проект-менеджер"
+      },
+      descriptions: {
+        lead:"7+ лет в веб-разработке. Специализируется на архитектуре сложных проектов и современных технологиях.",
+        designer:"Создает интуитивные и красивые интерфейсы. Опыт работы с крупными e-commerce проектами.",
+        backend:"Эксперт по серверным технологиям и базам данных. Обеспечивает надежность и безопасность проектов.",
+        manager:"Координирует работу команды и общение с клиентами. Следит за соблюдением сроков и качества."
+      },
+      cta: {
+        title:"Хотите присоединиться?",
+        text:"Мы всегда ищем талантливых разработчиков и дизайнеров",
+        button:"Написать нам"
+      }
     },
     process:{ title:"Как мы работаем" },
     pricing:{ title:"Пакеты и цены" },
@@ -837,6 +858,93 @@ function reviewsSlider(){
   updateSlider();
 }
 
+function teamSlider(){
+  const slider = $('#teamSlider');
+  const slides = [...slider.querySelectorAll('.team-slide')];
+  const indicators = [...document.querySelectorAll('.team-indicator')];
+  const prevBtn = $('.prev-team');
+  const nextBtn = $('.next-team');
+  
+  let currentSlide = 0;
+  let autoSlideInterval;
+  
+  function updateSlider() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active', 'prev');
+      
+      if (index === currentSlide) {
+        slide.classList.add('active');
+      } else if (index < currentSlide) {
+        slide.classList.add('prev');
+      }
+    });
+    
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentSlide);
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+  }
+  
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+  
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+  }
+  
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000);
+  }
+  
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+  
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    setTimeout(startAutoSlide, 8000);
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    setTimeout(startAutoSlide, 8000);
+  });
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToSlide(index);
+      stopAutoSlide();
+      setTimeout(startAutoSlide, 8000);
+    });
+  });
+  
+  const teamSection = $('#team');
+  if (teamSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAutoSlide();
+        } else {
+          stopAutoSlide();
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    observer.observe(teamSection);
+  }
+  
+  updateSlider();
+}
+
 /* ============== Init ============== */
 document.addEventListener('DOMContentLoaded', ()=>{
   // год в футере
@@ -859,4 +967,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   faq();
   toTop();
   reviewsSlider();
+  teamSlider();
 });
