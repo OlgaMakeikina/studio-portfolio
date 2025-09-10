@@ -2,7 +2,7 @@
 /* ============== i18n ============== */
 const i18n = {
   ru: {
-    nav: { services:"Услуги", portfolio:"Портфолио", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
+    nav: { services:"Услуги", about:"О нас", portfolio:"Портфолио", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
     hero: {
       title:"Студия разработки: сайты, Telegram-боты, поддержка, хостинг, приложения",
       subtitle:"Проекты под любой бюджет и сложность. От лендингов и WordPress до кастомных решений.",
@@ -10,6 +10,20 @@ const i18n = {
       secondary:"Получить консультацию"
     },
     services: { title:"Услуги" },
+    about: {
+      title:"О нас",
+      intro:"Мы — команда разработчиков, которая создает цифровые решения для бизнеса любого масштаба.",
+      main:"Наша студия специализируется на разработке сайтов, Telegram-ботов, технической поддержке и хостинге. Работаем с клиентами из России, Бразилии и других стран, предлагая решения под любой бюджет и сложность.",
+      approach:"Мы не просто пишем код — мы решаем бизнес-задачи. Каждый проект начинается с глубокого анализа ваших потребностей и заканчивается работающим инструментом, который приносит результат.",
+      features: {
+        speed: { title:"Быстрый старт", text:"От идеи до запуска — 7-30 дней в зависимости от сложности" },
+        global: { title:"Международный опыт", text:"Работаем с клиентами из России, Бразилии, поддерживаем RU/PT/EN" },
+        support: { title:"Надежная поддержка", text:"SLA-пакеты, мониторинг, обновления — ваш сайт всегда работает" },
+        innovation: { title:"Современные технологии", text:"От классических CMS до кастомных решений и AI-интеграций" }
+      },
+      stats: { projects:"Проектов", years:"Года на рынке", support:"Поддержка", satisfaction:"Довольных клиентов" },
+      cta: { title:"Готовы начать проект?", text:"Расскажите о своей задаче, и мы предложим оптимальное решение", button:"Обсудить проект" }
+    },
     portfolio: {
       title:"Портфолио",
       filters:{ all:"Все", websites:"Сайты", bots:"Боты", apps:"Приложения" },
@@ -31,7 +45,7 @@ const i18n = {
     }
   },
   pt: {
-    nav: { services:"Serviços", portfolio:"Portfólio", process:"Processo", pricing:"Preços", faq:"FAQ", cta:"Discutir projeto" },
+    nav: { services:"Serviços", about:"Sobre nós", portfolio:"Portfólio", process:"Processo", pricing:"Preços", faq:"FAQ", cta:"Discutir projeto" },
     hero: {
       title:"Estúdio de desenvolvimento: sites, bots no Telegram, suporte, hospedagem e apps",
       subtitle:"Projetos para todo orçamento e nível de complexidade. De landing pages e WordPress a soluções customizadas.",
@@ -39,6 +53,20 @@ const i18n = {
       secondary:"Solicitar consultoria"
     },
     services: { title:"Serviços" },
+    about: {
+      title:"Sobre nós",
+      intro:"Somos uma equipe de desenvolvedores que cria soluções digitais para negócios de qualquer escala.",
+      main:"Nosso estúdio é especializado no desenvolvimento de sites, bots do Telegram, suporte técnico e hospedagem. Trabalhamos com clientes do Brasil, Rússia e outros países, oferecendo soluções para qualquer orçamento e complexidade.",
+      approach:"Não apenas escrevemos código — resolvemos problemas de negócio. Cada projeto começa com uma análise profunda de suas necessidades e termina com uma ferramenta funcional que traz resultados.",
+      features: {
+        speed: { title:"Início rápido", text:"Da ideia ao lançamento — 7-30 dias dependendo da complexidade" },
+        global: { title:"Experiência internacional", text:"Trabalhamos com clientes do Brasil, Rússia, suportamos RU/PT/EN" },
+        support: { title:"Suporte confiável", text:"Pacotes SLA, monitoramento, atualizações — seu site sempre funcionando" },
+        innovation: { title:"Tecnologias modernas", text:"De CMS clássicos a soluções customizadas e integrações de IA" }
+      },
+      stats: { projects:"Projetos", years:"Anos no mercado", support:"Suporte", satisfaction:"Clientes satisfeitos" },
+      cta: { title:"Pronto para começar o projeto?", text:"Conte sobre sua tarefa e ofereceremos a solução ideal", button:"Discutir projeto" }
+    },
     portfolio: {
       title:"Portfólio",
       filters:{ all:"Todos", websites:"Sites", bots:"Bots", apps:"Apps" },
@@ -324,24 +352,134 @@ const services = [
 
 const portfolioData = [
   // category: website | bot | app
-  { id:1, title:"WordPress магазин", category:"website", short:"Тема + каталог, импорт товаров", tags:["WP","Catalog","SEO"],
-    details:{ challenge:"Запустить каталог с импортом", solution:"Кастомная тема + импортер CSV", result:"+35% органики за 2 месяца" } },
-  { id:2, title:"Лендинг курса", category:"website", short:"Чистый HTML/CSS/JS, быстрый", tags:["Landing","A11y","Perf"],
-    details:{ challenge:"Высокий CR и скорость", solution:"Лёгкая сетка, lazyload", result:"Lighthouse 98/100" } },
-  { id:3, title:"TG-бот записи", category:"bot", short:"Запись на услуги, уведомления", tags:["Telegram","Booking"],
-    details:{ challenge:"Автозапись и алерты", solution:"Структура сценариев, вебхуки", result:"Сокращение ручной рутины на 70%" } },
-  { id:4, title:"Корпоративный сайт", category:"website", short:"Разделы, блог, вакансии", tags:["CMS","Blog"],
-    details:{ challenge:"Единый стиль и редактура", solution:"Компоненты и гайдлайн", result:"Рост вовлеченности х2" } },
-  { id:5, title:"PWA каталог", category:"app", short:"Оффлайн-просмотр, инсталляция", tags:["PWA","SPA"],
-    details:{ challenge:"Работа оффлайн", solution:"Service Worker + cache", result:"Доступность 99% на моб." } },
-  { id:6, title:"TG-бот-квиз", category:"bot", short:"Лиды с сегментацией", tags:["Quiz","Leads"],
-    details:{ challenge:"Квалификация лидов", solution:"Ветки логики и теги", result:"CR лид-форма → 21%" } },
-  { id:7, title:"Каталог услуг", category:"website", short:"Фильтры и теги", tags:["Filters","UX"],
-    details:{ challenge:"Быстрые фильтры", solution:"Клиентский фильтр без бэка", result:"Время поиска ↓ в 3 раза" } },
-  { id:8, title:"Дашборд-прототип", category:"app", short:"Просмотр метрик", tags:["Prototype","Charts"],
-    details:{ challenge:"Собрать MVP", solution:"Чистый JS + mock", result:"Утверждён за 1 спринт" } },
-  { id:9, title:"Сайт события", category:"website", short:"Программа, карта, спикеры", tags:["Event","Map"],
-    details:{ challenge:"Простая навигация", solution:"Секции и якоря", result:"Позитивный фидбек гостей" } }
+  { 
+    id: 1, 
+    title: "СИМПЛЕКС", 
+    category: "website", 
+    subtitle: "Разработка лендинга для логистической компании",
+    description: "Современный сайт с футуристичным дизайном и интерактивными элементами",
+    badge: "NEW",
+    gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%)",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+    tags: ["Landing", "B2B", "Interactive"],
+    details: { 
+      challenge: "Создать современный сайт для логистической компании с акцентом на технологичность", 
+      solution: "Разработали лендинг с 3D элементами, анимациями и интуитивной навигацией", 
+      result: "Увеличение конверсии на 45% и время на сайте выросло в 2.3 раза" 
+    } 
+  },
+  { 
+    id: 2, 
+    title: "MEDTECH PRO", 
+    category: "website", 
+    subtitle: "Платформа для медицинских специалистов",
+    description: "Корпоративный сайт с системой записи и личными кабинетами",
+    badge: "",
+    gradient: "linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%)",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
+    tags: ["Healthcare", "CRM", "Booking"],
+    details: { 
+      challenge: "Разработать платформу для медицинских консультаций онлайн", 
+      solution: "Создали сайт с интегрированной системой видеозвонков и календарем", 
+      result: "500+ врачей зарегистрировались в первый месяц" 
+    } 
+  },
+  { 
+    id: 3, 
+    title: "CRYSTAL SHOP", 
+    category: "website", 
+    subtitle: "Интернет-магазин ювелирных изделий",
+    description: "E-commerce с 3D просмотром товаров и AR примеркой",
+    badge: "HOT",
+    gradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop",
+    tags: ["E-commerce", "3D", "AR"],
+    details: { 
+      challenge: "Создать премиальный интернет-магазин с инновационным UX", 
+      solution: "Внедрили 3D модели украшений и AR примерку через камеру", 
+      result: "Средний чек вырос на 180%, возвраты снизились на 60%" 
+    } 
+  },
+  { 
+    id: 4, 
+    title: "LEARN HUB", 
+    category: "app", 
+    subtitle: "Образовательная платформа",
+    description: "PWA для онлайн-обучения с геймификацией",
+    badge: "",
+    gradient: "linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%)",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+    tags: ["Education", "PWA", "Gamification"],
+    details: { 
+      challenge: "Разработать увлекательную платформу для дистанционного обучения", 
+      solution: "Создали PWA с системой достижений, прогресс-бары и интерактивные задания", 
+      result: "95% пользователей завершают курсы до конца" 
+    } 
+  },
+  { 
+    id: 5, 
+    title: "FOOD DELIVERY BOT", 
+    category: "bot", 
+    subtitle: "Telegram-бот доставки еды",
+    description: "Умный бот с AI-рекомендациями и отслеживанием заказов",
+    badge: "AI",
+    gradient: "linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%)",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop",
+    tags: ["Telegram", "AI", "Delivery"],
+    details: { 
+      challenge: "Автоматизировать процесс заказа еды в Telegram", 
+      solution: "Разработали бота с AI, который предлагает блюда на основе предпочтений", 
+      result: "Обрабатывает 1000+ заказов в день, время заказа сократилось в 3 раза" 
+    } 
+  },
+  { 
+    id: 6, 
+    title: "CRYPTO TRACKER", 
+    category: "app", 
+    subtitle: "Трекер криптовалют",
+    description: "Real-time мониторинг курсов с умными уведомлениями",
+    badge: "",
+    gradient: "linear-gradient(135deg, #0891b2 0%, #0ea5e9 50%, #38bdf8 100%)",
+    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop",
+    tags: ["Crypto", "Real-time", "Analytics"],
+    details: { 
+      challenge: "Создать удобный трекер для мониторинга криптовалют", 
+      solution: "Разработали SPA с real-time обновлениями и smart-уведомлениями", 
+      result: "10K+ активных пользователей, средняя сессия 15 минут" 
+    } 
+  },
+  { 
+    id: 7, 
+    title: "SUPPORT BOT", 
+    category: "bot", 
+    subtitle: "WhatsApp-бот технической поддержки",
+    description: "AI-ассистент для автоматизации клиентского сервиса",
+    badge: "",
+    gradient: "linear-gradient(135deg, #059669 0%, #10b981 50%, #22c55e 100%)",
+    image: "https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?w=800&h=600&fit=crop",
+    tags: ["WhatsApp", "Support", "AI"],
+    details: { 
+      challenge: "Автоматизировать техподдержку для снижения нагрузки на операторов", 
+      solution: "Создали AI-бота, который решает 80% типовых вопросов автоматически", 
+      result: "Время ответа сократилось с 2 часов до 30 секунд" 
+    } 
+  },
+  { 
+    id: 8, 
+    title: "FITNESS STUDIO", 
+    category: "website", 
+    subtitle: "Сайт фитнес-студии с записью",
+    description: "Современный сайт с онлайн-записью и программами тренировок",
+    badge: "",
+    gradient: "linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+    tags: ["Fitness", "Booking", "Schedule"],
+    details: { 
+      challenge: "Создать удобную систему записи на тренировки", 
+      solution: "Разработали сайт с календарем, оплатой онлайн и push-уведомлениями", 
+      result: "Заполняемость залов выросла на 70%, отмены снизились на 40%" 
+    } 
+  }
 ];
 
 const processSteps = [
@@ -462,15 +600,51 @@ function renderPortfolio(filter='all'){
   const grid = $('#portfolioGrid');
   grid.innerHTML = "";
   const items = portfolioData.filter(p=> filter==='all' ? true : p.category===filter);
+  
   items.forEach(p=>{
     const card = document.createElement('article');
-    card.className = 'card portfolio-item';
+    card.className = 'portfolio-showcase-item';
+    card.style.background = p.gradient;
+    
     card.innerHTML = `
-      <div class="thumb"><img src="${placeholderThumb(p.title)}" alt="${p.title}" loading="lazy"/></div>
-      <h3>${p.title}</h3>
-      <p class="mini">${p.short}</p>
-      <ul class="tags">${p.tags.map(t=>`<li class="tag">${t}</li>`).join('')}</ul>
-      <div><button class="btn btn--small" data-open="project" data-id="${p.id}" data-i18n="portfolio.open">Детали</button></div>
+      <div class="showcase-background">
+        <img src="${p.image}" alt="${p.title}" loading="lazy" class="showcase-bg-image"/>
+        <div class="showcase-overlay"></div>
+      </div>
+      
+      <div class="showcase-content">
+        <div class="showcase-header">
+          ${p.badge ? `<span class="showcase-badge">${p.badge}</span>` : ''}
+          <div class="showcase-controls">
+            <button class="showcase-view" data-open="project" data-id="${p.id}">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              СМОТРЕТЬ ПОДРОБНЕЕ
+            </button>
+          </div>
+        </div>
+        
+        <div class="showcase-info">
+          <h3 class="showcase-title">${p.title}</h3>
+          <p class="showcase-subtitle">${p.subtitle}</p>
+          <p class="showcase-description">${p.description}</p>
+          
+          <div class="showcase-tags">
+            ${p.tags.map(tag => `<span class="showcase-tag">${tag}</span>`).join('')}
+          </div>
+        </div>
+        
+        <div class="showcase-footer">
+          <button class="showcase-cta" data-open="project" data-id="${p.id}">
+            ХОЧУ ТАКЖЕ
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     `;
     grid.appendChild(card);
   });
