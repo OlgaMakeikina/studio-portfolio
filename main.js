@@ -756,20 +756,15 @@ function reviewsSlider(){
   const prevBtn = $('.prev-btn');
   const nextBtn = $('.next-btn');
   
+  let currentRotation = 0;
   let currentSlide = 0;
   let autoSlideInterval;
   
   function updateSlider() {
+    slider.style.transform = `rotateY(${currentRotation}deg)`;
+    
     slides.forEach((slide, index) => {
-      slide.classList.remove('active', 'prev', 'next');
-      
-      if (index === currentSlide) {
-        slide.classList.add('active');
-      } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
-        slide.classList.add('prev');
-      } else if (index === (currentSlide + 1) % slides.length) {
-        slide.classList.add('next');
-      }
+      slide.classList.toggle('active', index === currentSlide);
     });
     
     dots.forEach((dot, index) => {
@@ -778,16 +773,20 @@ function reviewsSlider(){
   }
   
   function nextSlide() {
+    currentRotation -= 90;
     currentSlide = (currentSlide + 1) % slides.length;
     updateSlider();
   }
   
   function prevSlide() {
+    currentRotation += 90;
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     updateSlider();
   }
   
   function goToSlide(index) {
+    const diff = index - currentSlide;
+    currentRotation -= diff * 90;
     currentSlide = index;
     updateSlider();
   }
