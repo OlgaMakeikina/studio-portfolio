@@ -16,7 +16,7 @@
 html,body{height:100%}
 body{
   margin:0;
-  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif;
   color:var(--text);
   background:var(--bg);
   background-image:
@@ -185,10 +185,171 @@ button{font:inherit}
 .legal{color:var(--muted);font-size:14px}
 .link{background:none;border:0;color:var(--accent);cursor:pointer;padding:0}
 
-.site-footer{border-top:1px solid var(--border);padding:28px 0;background:var(--card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.footer-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.footer-inner nav a{margin-right:10px;color:var(--muted)}
-.socials a{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:60px 0 40px;
+  background:var(--card);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  margin-top:60px;
+}
+
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+
+.footer-left{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.footer-logo{
+  font-size:24px;
+  font-weight:700;
+  color:var(--accent);
+  filter:drop-shadow(0 0 8px var(--accent));
+}
+
+.footer-desc{
+  color:var(--muted);
+  margin:0;
+  line-height:1.5;
+}
+
+.footer-legal{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+  line-height:1.4;
+}
+
+.footer-policy{
+  color:var(--accent);
+  font-size:14px;
+}
+
+.footer-payments{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+
+.payment-icon{
+  font-size:20px;
+  opacity:0.7;
+}
+
+.footer-nav{
+  display:flex;
+  gap:40px;
+}
+
+.footer-column{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-column h4{
+  color:var(--text);
+  font-size:16px;
+  font-weight:600;
+  margin:0 0 8px 0;
+}
+
+.footer-column a{
+  color:var(--muted);
+  font-size:14px;
+  text-decoration:none;
+  transition:color 0.2s ease;
+}
+
+.footer-column a:hover{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.footer-right{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:flex-end;
+  text-align:right;
+}
+
+.footer-phone{
+  font-size:28px;
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:-0.5px;
+}
+
+.footer-email{
+  font-size:18px;
+  color:var(--accent);
+  font-weight:500;
+}
+
+.footer-connect h4,
+.footer-social h4{
+  font-size:14px;
+  color:var(--muted);
+  margin:0 0 8px 0;
+  font-weight:500;
+}
+
+.footer-messengers,
+.footer-channels{
+  display:flex;
+  gap:12px;
+}
+
+.footer-messengers a,
+.footer-channels a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  transition:all 0.2s ease;
+}
+
+.footer-messengers a:hover,
+.footer-channels a:hover{
+  border-color:var(--accent);
+  background:rgba(0,210,255,0.1);
+  color:var(--accent);
+}
+
+.footer-callback{
+  background:transparent;
+  border:2px solid var(--accent);
+  color:var(--accent);
+  padding:12px 24px;
+  border-radius:50px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.footer-callback:hover{
+  background:var(--accent);
+  color:var(--bg);
+}
 
 .modal{width:min(900px,92vw);border:0;border-radius:16px;padding:0;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);background:var(--card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .modal::backdrop{background:rgba(15,15,35,.7)}
@@ -208,6 +369,8 @@ button{font:inherit}
   .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero-inner{grid-template-columns:1fr}
   .hero-art{order:-1}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:40px}
+  .footer-nav{flex-direction:column;gap:20px}
 }
 @media (max-width:640px){
   .services-grid,.portfolio-grid,.pricing-grid{grid-template-columns:1fr}
@@ -216,5 +379,9 @@ button{font:inherit}
   .nav-toggle{display:block}
   .nav ul.is-open{display:flex}
   .modal-columns{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:30px}
+  .footer-right{align-items:flex-start;text-align:left}
+  .footer-phone{font-size:24px}
+  .footer-nav{flex-direction:row;gap:30px}
 }
 :focus-visible{outline:3px solid var(--ring);outline-offset:2px}
