@@ -1,7 +1,7 @@
 // script.js
 /* ============== i18n ============== */
 const i18n = {
-  nav: { services:"Услуги", about:"О нас", team:"Команда", portfolio:"Портфолио", reviews:"Отзывы", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
+  nav: { services:"Услуги", about:"О нас", team:"Команда", stats:"Статистика", portfolio:"Портфолио", reviews:"Отзывы", process:"Процесс", pricing:"Цены", faq:"FAQ", cta:"Обсудить проект" },
     hero: {
       title:"Студия разработки: сайты, Telegram-боты, поддержка, хостинг, приложения",
       subtitle:"Проекты под любой бюджет и сложность. От лендингов и WordPress до кастомных решений.",
@@ -19,6 +19,14 @@ const i18n = {
         global: { title:"Международный опыт", text:"Работаем с клиентами из России, Бразилии, поддерживаем RU/PT/EN" },
         support: { title:"Надежная поддержка", text:"SLA-пакеты, мониторинг, обновления — ваш сайт всегда работает" },
         innovation: { title:"Современные технологии", text:"От классических CMS до кастомных решений и AI-интеграций" }
+      },
+      platforms: {
+        title:"Работаем с любыми технологиями",
+        subtitle:"От готовых CMS до полностью кастомных решений",
+        custom: { title:"Самописные сайты", text:"Уникальный код под ваши задачи" },
+        tilda: { title:"Тильда", text:"Быстрые лендинги и корпоративные сайты" },
+        wordpress: { title:"WordPress", text:"Блоги, интернет-магазины, корпоративные порталы" },
+        joomla: { title:"Joomla", text:"Мощные корпоративные решения" }
       },
       stats: { projects:"Проектов", years:"Года на рынке", support:"Поддержка", satisfaction:"Довольных клиентов" },
       cta: { title:"Готовы начать проект?", text:"Расскажите о своей задаче, и мы предложим оптимальное решение", button:"Обсудить проект" }
@@ -48,6 +56,18 @@ const i18n = {
         text:"Мы всегда ищем талантливых разработчиков и дизайнеров",
         button:"Написать нам"
       }
+    },
+    stats: {
+      title:"Статистика в реальном времени",
+      subtitle:"Цифры, которые говорят за нас",
+      projects:"Проектов завершено",
+      clients:"Довольных клиентов",
+      coffee:"Чашек кофе выпито",
+      hours:"Часов разработки",
+      satisfaction:"Уровень удовлетворенности",
+      uptime:"Время работы серверов",
+      live:"Обновляется в реальном времени",
+      updated:"Последнее обновление:"
     },
     process:{ title:"Как мы работаем" },
     pricing:{ title:"Пакеты и цены" },
@@ -945,6 +965,118 @@ function teamSlider(){
   updateSlider();
 }
 
+function liveStats(){
+  const statsSection = $('#stats');
+  if (!statsSection) return;
+  
+  const statNumbers = [...statsSection.querySelectorAll('.stat-number')];
+  const lastUpdateTime = $('#lastUpdateTime');
+  
+  function animateCounter(element, target, suffix = '', duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+    
+    element.classList.add('counting');
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+        element.classList.remove('counting');
+      }
+      
+      if (suffix === '%' && target < 100) {
+        element.textContent = current.toFixed(1) + suffix;
+      } else if (target > 1000) {
+        element.textContent = Math.floor(current).toLocaleString() + suffix;
+      } else {
+        element.textContent = Math.floor(current) + suffix;
+      }
+    }, 16);
+  }
+  
+  function startCounters() {
+    statNumbers.forEach((element, index) => {
+      const target = parseFloat(element.dataset.target);
+      const suffix = element.dataset.suffix || '';
+      
+      setTimeout(() => {
+        animateCounter(element, target, suffix);
+      }, index * 200);
+    });
+  }
+  
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('ru-RU', {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    if (lastUpdateTime) {
+      lastUpdateTime.textContent = timeString;
+    }
+  }
+  
+  function simulateRealTimeUpdates() {
+    const projectsCounter = statsSection.querySelector('.projects .stat-number');
+    const coffeeCounter = statsSection.querySelector('.coffee .stat-number');
+    const hoursCounter = statsSection.querySelector('.hours .stat-number');
+    
+    setInterval(() => {
+      if (Math.random() < 0.3) {
+        const currentProjects = parseInt(projectsCounter.textContent) || 247;
+        if (currentProjects < 300) {
+          projectsCounter.textContent = currentProjects + 1;
+          projectsCounter.dataset.target = currentProjects + 1;
+        }
+      }
+      
+      if (Math.random() < 0.7) {
+        const currentCoffee = parseInt(coffeeCounter.textContent.replace(/,/g, '')) || 3284;
+        coffeeCounter.textContent = (currentCoffee + 1).toLocaleString();
+        coffeeCounter.dataset.target = currentCoffee + 1;
+      }
+      
+      if (Math.random() < 0.5) {
+        const currentHours = parseInt(hoursCounter.textContent.replace(/,/g, '')) || 12450;
+        if (currentHours < 15000) {
+          hoursCounter.textContent = (currentHours + 1).toLocaleString();
+          hoursCounter.dataset.target = currentHours + 1;
+        }
+      }
+      
+      updateTime();
+    }, 5000 + Math.random() * 10000);
+  }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounters();
+        updateTime();
+        setTimeout(simulateRealTimeUpdates, 3000);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  observer.observe(statsSection);
+  
+  const statCards = statsSection.querySelectorAll('.stat-card');
+  statCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'all 0.6s ease';
+    
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, index * 150 + 500);
+  });
+}
+
 /* ============== Init ============== */
 document.addEventListener('DOMContentLoaded', ()=>{
   // год в футере
@@ -968,4 +1100,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   toTop();
   reviewsSlider();
   teamSlider();
+  liveStats();
 });
