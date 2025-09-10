@@ -103,8 +103,37 @@
     <section id="services" class="section" aria-labelledby="servicesTitle">
       <div class="container">
         <h2 id="servicesTitle" class="section-title" data-i18n="services.title">Услуги</h2>
-        <div class="cards services-grid">
-          <!-- Карточки услуг генерируются из JS -->
+        
+        <!-- Табы -->
+        <div class="services-tabs" role="tablist" aria-label="Категории услуг">
+          <button class="tab-button is-active" data-tab="websites" role="tab" aria-selected="true">Сайты</button>
+          <button class="tab-button" data-tab="support" role="tab" aria-selected="false">Поддержка</button>
+          <button class="tab-button" data-tab="bots" role="tab" aria-selected="false">Боты</button>
+          <button class="tab-button" data-tab="tech" role="tab" aria-selected="false">Техническое</button>
+        </div>
+        
+        <!-- Контент табов -->
+        <div class="tab-content">
+          <div class="tab-panel is-active" data-panel="websites" role="tabpanel">
+            <div class="cards services-grid" id="websitesServices">
+              <!-- Карточки сайтов генерируются из JS -->
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="support" role="tabpanel">
+            <div class="cards services-grid" id="supportServices">
+              <!-- Карточки поддержки генерируются из JS -->
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="bots" role="tabpanel">
+            <div class="cards services-grid" id="botsServices">
+              <!-- Карточки ботов генерируются из JS -->
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="tech" role="tabpanel">
+            <div class="cards services-grid" id="techServices">
+              <!-- Карточки технического сопровождения генерируются из JS -->
+            </div>
+          </div>
         </div>
       </div>
     </section>
