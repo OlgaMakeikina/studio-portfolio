@@ -578,12 +578,96 @@
     </section>
 
     <!-- ПРОЦЕСС -->
-    <section id="process" class="section" aria-labelledby="processTitle">
+    <section id="process" class="section process-flow-section" aria-labelledby="processTitle">
       <div class="container">
         <h2 id="processTitle" class="section-title" data-i18n="process.title">Как мы работаем</h2>
-        <ol class="process-grid">
-          <!-- Шаги из JS -->
-        </ol>
+        
+        <div class="wrapper">
+          <!-- Липкий блок с «змейкой» -->
+          <div class="timeline">
+            <svg viewBox="0 0 520 700" preserveAspectRatio="xMidYMid meet" id="snake">
+              <!-- S-образный путь -->
+              <path id="snakePath" class="path"
+                    d="M 70 90
+                       h 260
+                       q 100 0 100 100
+                       v 90
+                       q 0 100 -100 100
+                       H 130
+                       q -100 0 -100 100
+                       v 90
+                       q 0 100 100 100
+                       h 260" />
+
+              <!-- Пустые поинты -->
+              <circle class="node" cx="90"  cy="90"  r="18"/>
+              <circle class="node" cx="420" cy="280" r="12"/>
+              <circle class="node" cx="110" cy="470" r="12"/>
+              <circle class="node" cx="420" cy="660" r="16"/>
+
+              <!-- Подвижный синий кружок -->
+              <circle id="cursor" class="cursor" cx="0" cy="0" r="10"/>
+            </svg>
+          </div>
+
+          <!-- Контентные секции -->
+          <div class="content" id="content">
+            <section class="step" data-progress="0.02">
+              <span class="badge"></span>
+              <div>
+                <h2 data-i18n="process.step1.title">Бриф и диагностика</h2>
+                <ul class="step-list">
+                  <li data-i18n="process.step1.item1">Цели, аудитория</li>
+                  <li data-i18n="process.step1.item2">Требования и сроки</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="step" data-progress="0.37">
+              <span class="badge"></span>
+              <div>
+                <h2 data-i18n="process.step2.title">Смета и варианты</h2>
+                <ul class="step-list">
+                  <li data-i18n="process.step2.item1">2–3 пакета</li>
+                  <li data-i18n="process.step2.item2">Прозрачная стоимость</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="step" data-progress="0.62">
+              <span class="badge"></span>
+              <div>
+                <h2 data-i18n="process.step3.title">Дизайн и прототип</h2>
+                <ul class="step-list">
+                  <li data-i18n="process.step3.item1">UI-сборник</li>
+                  <li data-i18n="process.step3.item2">Кликабельный макет</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="step" data-progress="0.85">
+              <span class="badge"></span>
+              <div>
+                <h2 data-i18n="process.step4.title">Разработка и тесты</h2>
+                <ul class="step-list">
+                  <li data-i18n="process.step4.item1">Адаптивность</li>
+                  <li data-i18n="process.step4.item2">Доступность</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="step" data-progress="0.98">
+              <span class="badge"></span>
+              <div>
+                <h2 data-i18n="process.step5.title">Запуск и поддержка</h2>
+                <ul class="step-list">
+                  <li data-i18n="process.step5.item1">Миграция/хостинг</li>
+                  <li data-i18n="process.step5.item2">SLA-поддержка</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -648,14 +648,82 @@ function renderPortfolio(filter='all'){
 }
 
 function renderProcess(lang="ru"){
-  const list = $('.process-grid');
-  list.innerHTML = "";
-  processSteps.forEach(s=>{
+  const container = $('#processSteps');
+  container.innerHTML = "";
+  
+  // Позиции точно соответствуют новым SVG координатам
+  // viewBox="0 0 800 500", точки: (100,60), (450,150), (100,240), (100,330), (450,420)
+  const positions = [
+    { left: '12.5%', top: '12%' },  // (100/800 = 12.5%, 60/500 = 12%)
+    { left: '56.25%', top: '30%' }, // (450/800 = 56.25%, 150/500 = 30%)
+    { left: '12.5%', top: '48%' },  // (100/800 = 12.5%, 240/500 = 48%)
+    { left: '12.5%', top: '66%' },  // (100/800 = 12.5%, 330/500 = 66%)
+    { left: '56.25%', top: '84%' }  // (450/800 = 56.25%, 420/500 = 84%)
+  ];
+  
+  processSteps.forEach((s, index) => {
     const title = lang==="ru" ? s.titleRU : s.titlePT;
     const bullets = lang==="ru" ? s.bulletsRU : s.bulletsPT;
-    const li = document.createElement('li');
-    li.innerHTML = `<h3>${title}</h3><ul class="list">${bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
-    list.appendChild(li);
+    
+    const step = document.createElement('div');
+    step.className = `process-step ${index === 0 ? 'active' : ''}`;
+    step.dataset.step = index;
+    step.style.left = positions[index]?.left || '12.5%';
+    step.style.top = positions[index]?.top || '12%';
+    
+    step.innerHTML = `
+      <h3>${title}</h3>
+      <ul class="list">${bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+    `;
+    
+    container.appendChild(step);
+  });
+  
+  initProcessFlowAnimation();
+}
+
+function initProcessFlowAnimation(){
+  const points = document.querySelectorAll('.process-point');
+  const steps = document.querySelectorAll('.process-step');
+  let currentStep = 0;
+  let autoPlay = true;
+  
+  function activateStep(index) {
+    if (window.innerWidth <= 768) return;
+    
+    points.forEach((point, i) => {
+      point.classList.toggle('active', i === index);
+    });
+    steps.forEach((step, i) => {
+      step.classList.toggle('active', i === index);
+    });
+  }
+  
+  points.forEach((point, index) => {
+    point.addEventListener('click', () => {
+      currentStep = index;
+      activateStep(currentStep);
+      autoPlay = false;
+      setTimeout(() => { autoPlay = true; }, 10000);
+    });
+  });
+  
+  function autoAdvance() {
+    if (autoPlay && window.innerWidth > 768) {
+      currentStep = (currentStep + 1) % processSteps.length;
+      activateStep(currentStep);
+    }
+  }
+  
+  setInterval(autoAdvance, 4000);
+  activateStep(0);
+  
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) {
+      steps.forEach(step => step.classList.add('active'));
+    } else {
+      activateStep(currentStep);
+    }
   });
 }
 
