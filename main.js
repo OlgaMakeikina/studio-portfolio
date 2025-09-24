@@ -456,6 +456,22 @@ const portfolioData = [
       solution: "Разработали сайт с календарем, оплатой онлайн и push-уведомлениями", 
       result: "Заполняемость залов выросла на 70%, отмены снизились на 40%" 
     } 
+  },
+  { 
+    id: 9, 
+    title: "Лендинг HUMAN DESIGN", 
+    category: "website", 
+    subtitle: "Лендинг для услуг Human Design",
+    description: "Современный лендинг для привлечения клиентов на консультации",
+    badge: "NEW",
+    gradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #d8b4fe 100%)",
+    image: "media/hd/8.jpg",
+    tags: ["Landing"],
+    details: { 
+      challenge: "Создать доверительный лендинг для услуг Human Design с фокусом на экспертность", 
+      solution: "Разработали лендинг с акцентом на отзывы, кейсы и простую форму заказа", 
+      result: "Конверсия в заявку 12%, средняя стоимость лида снижена на 40%" 
+    } 
   }
 ];
 
@@ -725,6 +741,13 @@ function attachProjectOpen(){
   $$('button[data-open="project"]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const id = Number(btn.dataset.id);
+      
+      // Проект "Лендинг Human Design" (id 9) открывается на отдельной странице
+      if (id === 9) {
+        window.location.href = 'project.html';
+        return;
+      }
+      
       const p = portfolioData.find(x=>x.id===id);
       if(!p) return;
       $('#projectTitle').textContent = p.title;

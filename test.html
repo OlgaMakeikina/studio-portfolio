@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест JavaScript</title>
+</head>
+<body>
+  <h1>Тест JavaScript</h1>
+  <div id="test">Если увидите изменение ниже, JavaScript работает</div>
+  
+  <script>
+    console.log('Тест: JavaScript загружен');
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Тест: DOMContentLoaded сработал');
+      
+      const testDiv = document.getElementById('test');
+      if (testDiv) {
+        testDiv.textContent = 'JavaScript РАБОТАЕТ!';
+        testDiv.style.color = 'green';
+        testDiv.style.fontWeight = 'bold';
+      }
+    });
+  </script>
+</body>
+</html>
