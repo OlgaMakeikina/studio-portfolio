@@ -192,12 +192,12 @@ const portfolioData = [
     id: 1, 
     title: "GOMANIC", 
     category: "website", 
-    subtitle: "Разработка лендинга для логистической компании",
-    description: "Современный сайт с футуристичным дизайном и интерактивными элементами",
+    subtitle: "Разработка сайтов для международной образовательной платформы мастеров маникюра",
+    description: "Система сайтов от лендинга до интернет-магазина с кастомными решениями",
     badge: "В работе",
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%)",
     image: "/media/gomanic/gomanic-main.jpeg",
-    tags: ["Landing", "B2B", "Interactive"],
+    tags: ["Лендинг", "Интернет-магазин", "ERP"],
     details: { 
       challenge: "Создать современный сайт для логистической компании с акцентом на технологичность", 
       solution: "Разработали лендинг с 3D элементами, анимациями и интуитивной навигацией", 
@@ -208,16 +208,16 @@ const portfolioData = [
     id: 2, 
     title: "ВОНДИГА ПАРК", 
     category: "website", 
-    subtitle: "Сайт базы отдыха с онлайн-записью и бронированием",
-    description: "Корпоративный сайт с системой записи и личными кабинетами",
+    subtitle: "Лендинг базы отдыха в Подмосковье",
+    description: "Сайт на Tilda с системой онлайн-бронирования",
     badge: "В работе",
     gradient: "linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%)",
     image: "media/vondiga/vondiga-main.jpg",
     tags: ["Tilda", "Техподдержка", "Booking"],
     details: { 
-      challenge: "Разработать платформу для медицинских консультаций онлайн", 
-      solution: "Создали сайт с интегрированной системой видеозвонков и календарем", 
-      result: "500+ врачей зарегистрировались в первый месяц" 
+      challenge: "Проведение техподдержки уже существующего сайта (разработан не нами)", 
+      solution: "Еженедельная техподдержка, обновление информации по запросу клиента, добавление новых блоков", 
+      result: "Стабильная работа сайта и высокая удовлетворенность клиентов" 
     } 
   },
   { 
@@ -226,7 +226,7 @@ const portfolioData = [
     category: "website", 
     subtitle: "Интернет-магазин ювелирных изделий",
     description: "E-commerce с 3D просмотром товаров и AR примеркой",
-    badge: "HOT",
+    badge: "В работе",
     gradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)",
     image: "media/mastercart/phone.jpg",
     tags: ["E-commerce", "3D", "AR"],
@@ -240,14 +240,14 @@ const portfolioData = [
     id: 4, 
     title: "ООО ВЕХА", 
     category: "website", 
-    subtitle: "Образовательная платформа",
-    description: "PWA для онлайн-обучения с геймификацией",
-    badge: "",
+    subtitle: "Информационный сайт управляющей компании ЖКХ",
+    description: "",
+    badge: "Завершен",
     gradient: "linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%)",
     image: "media/veha/veha-main.jpg",
     tags: ["Education", "PWA", "Gamification"],
     details: { 
-      challenge: "Разработать увлекательную платформу для дистанционного обучения", 
+      challenge: "Редизайн сайта на более современный с сохранением всей документации и соблюдением требований регулятора", 
       solution: "Создали PWA с системой достижений, прогресс-бары и интерактивные задания", 
       result: "95% пользователей завершают курсы до конца" 
     } 
@@ -277,7 +277,7 @@ const portfolioData = [
     badge: "Завершен",
     gradient: "linear-gradient(135deg, #0891b2 0%, #0ea5e9 50%, #38bdf8 100%)",
     image: "media/hd/8.jpg",
-    tags: ["Landing"],
+    tags: ["Лендинг"],
     details: { 
       challenge: "Создать доверительный лендинг для услуг Human Design с фокусом на экспертность", 
       solution: "Разработали лендинг с акцентом на отзывы, кейсы и простую форму заказа", 
