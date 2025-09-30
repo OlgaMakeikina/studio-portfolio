@@ -190,13 +190,13 @@ const portfolioData = [
   // category: website | bot | app
   { 
     id: 1, 
-    title: "СИМПЛЕКС", 
+    title: "GOMANIC", 
     category: "website", 
     subtitle: "Разработка лендинга для логистической компании",
     description: "Современный сайт с футуристичным дизайном и интерактивными элементами",
-    badge: "NEW",
+    badge: "В работе",
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%)",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+    image: "/media/gomanic/gomanic-main.jpeg",
     tags: ["Landing", "B2B", "Interactive"],
     details: { 
       challenge: "Создать современный сайт для логистической компании с акцентом на технологичность", 
@@ -206,14 +206,14 @@ const portfolioData = [
   },
   { 
     id: 2, 
-    title: "MEDTECH PRO", 
+    title: "ВОНДИГА ПАРК", 
     category: "website", 
-    subtitle: "Платформа для медицинских специалистов",
+    subtitle: "Сайт базы отдыха с онлайн-записью и бронированием",
     description: "Корпоративный сайт с системой записи и личными кабинетами",
-    badge: "",
+    badge: "В работе",
     gradient: "linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%)",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
-    tags: ["Healthcare", "CRM", "Booking"],
+    image: "media/vondiga/vondiga-main.jpg",
+    tags: ["Tilda", "Техподдержка", "Booking"],
     details: { 
       challenge: "Разработать платформу для медицинских консультаций онлайн", 
       solution: "Создали сайт с интегрированной системой видеозвонков и календарем", 
@@ -222,13 +222,13 @@ const portfolioData = [
   },
   { 
     id: 3, 
-    title: "CRYSTAL SHOP", 
+    title: "Мастер карт", 
     category: "website", 
     subtitle: "Интернет-магазин ювелирных изделий",
     description: "E-commerce с 3D просмотром товаров и AR примеркой",
     badge: "HOT",
     gradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop",
+    image: "media/mastercart/phone.jpg",
     tags: ["E-commerce", "3D", "AR"],
     details: { 
       challenge: "Создать премиальный интернет-магазин с инновационным UX", 
@@ -238,13 +238,13 @@ const portfolioData = [
   },
   { 
     id: 4, 
-    title: "LEARN HUB", 
-    category: "app", 
+    title: "ООО ВЕХА", 
+    category: "website", 
     subtitle: "Образовательная платформа",
     description: "PWA для онлайн-обучения с геймификацией",
     badge: "",
     gradient: "linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%)",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+    image: "media/veha/veha-main.jpg",
     tags: ["Education", "PWA", "Gamification"],
     details: { 
       challenge: "Разработать увлекательную платформу для дистанционного обучения", 
@@ -254,13 +254,13 @@ const portfolioData = [
   },
   { 
     id: 5, 
-    title: "FOOD DELIVERY BOT", 
-    category: "bot", 
-    subtitle: "Telegram-бот доставки еды",
+    title: "ДЕЛЬТА", 
+    category: "website", 
+    subtitle: "Сайт компании аренды складских помещений",
     description: "Умный бот с AI-рекомендациями и отслеживанием заказов",
-    badge: "AI",
+    badge: "Завершен",
     gradient: "linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%)",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop",
+    image: "media/delta/storage.jpg",
     tags: ["Telegram", "AI", "Delivery"],
     details: { 
       challenge: "Автоматизировать процесс заказа еды в Telegram", 
@@ -270,60 +270,12 @@ const portfolioData = [
   },
   { 
     id: 6, 
-    title: "CRYPTO TRACKER", 
-    category: "app", 
-    subtitle: "Трекер криптовалют",
-    description: "Real-time мониторинг курсов с умными уведомлениями",
-    badge: "",
-    gradient: "linear-gradient(135deg, #0891b2 0%, #0ea5e9 50%, #38bdf8 100%)",
-    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop",
-    tags: ["Crypto", "Real-time", "Analytics"],
-    details: { 
-      challenge: "Создать удобный трекер для мониторинга криптовалют", 
-      solution: "Разработали SPA с real-time обновлениями и smart-уведомлениями", 
-      result: "10K+ активных пользователей, средняя сессия 15 минут" 
-    } 
-  },
-  { 
-    id: 7, 
-    title: "SUPPORT BOT", 
-    category: "bot", 
-    subtitle: "WhatsApp-бот технической поддержки",
-    description: "AI-ассистент для автоматизации клиентского сервиса",
-    badge: "",
-    gradient: "linear-gradient(135deg, #059669 0%, #10b981 50%, #22c55e 100%)",
-    image: "https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?w=800&h=600&fit=crop",
-    tags: ["WhatsApp", "Support", "AI"],
-    details: { 
-      challenge: "Автоматизировать техподдержку для снижения нагрузки на операторов", 
-      solution: "Создали AI-бота, который решает 80% типовых вопросов автоматически", 
-      result: "Время ответа сократилось с 2 часов до 30 секунд" 
-    } 
-  },
-  { 
-    id: 8, 
-    title: "FITNESS STUDIO", 
-    category: "website", 
-    subtitle: "Сайт фитнес-студии с записью",
-    description: "Современный сайт с онлайн-записью и программами тренировок",
-    badge: "",
-    gradient: "linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
-    tags: ["Fitness", "Booking", "Schedule"],
-    details: { 
-      challenge: "Создать удобную систему записи на тренировки", 
-      solution: "Разработали сайт с календарем, оплатой онлайн и push-уведомлениями", 
-      result: "Заполняемость залов выросла на 70%, отмены снизились на 40%" 
-    } 
-  },
-  { 
-    id: 9, 
-    title: "Лендинг HUMAN DESIGN", 
+    title: "HUMAN DESIGN", 
     category: "website", 
     subtitle: "Лендинг для услуг Human Design",
     description: "Современный лендинг для привлечения клиентов на консультации",
-    badge: "NEW",
-    gradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #d8b4fe 100%)",
+    badge: "Завершен",
+    gradient: "linear-gradient(135deg, #0891b2 0%, #0ea5e9 50%, #38bdf8 100%)",
     image: "media/hd/8.jpg",
     tags: ["Landing"],
     details: { 

@@ -276,9 +276,16 @@ button{font:inherit}
 }
 
 .feature-icon{
-  font-size:24px;
+  font-family:"Exo 2","Inter",system-ui;
+  font-size:72px;
+  font-weight:900;
   flex-shrink:0;
-  filter:drop-shadow(0 0 8px rgba(255,255,255,.3));
+  line-height:1;
+  background:linear-gradient(135deg,var(--accent),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 12px rgba(0,210,255,.4));
 }
 
 .feature-content h4{
@@ -663,6 +670,7 @@ button{font:inherit}
 
 .contacts{display:grid;gap:16px}
 .contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.contact-actions .btn{width:200px;text-align:center}
 .start-steps{margin:0;padding-left:18px}
 .legal{color:var(--muted);font-size:14px}
 .link{background:none;border:0;color:var(--accent);cursor:pointer;padding:0}
