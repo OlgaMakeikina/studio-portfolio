@@ -70,6 +70,9 @@
             <a href="#contacts" class="btn btn--ghost">Получить консультацию</a>
           </div>
         </div>
+        <div class="hero-image-wrapper">
+          <img src="7.png" alt="Веб-разработка" class="hero-image">
+        </div>
         <div class="hero-art" aria-hidden="true">
           <!-- Декоративная сетка -->
           <svg viewBox="0 0 300 240" class="grid">
@@ -598,20 +601,74 @@
     <section id="contacts" class="section" aria-labelledby="contactsTitle">
       <div class="container">
         <h2 id="contactsTitle" class="section-title">Контакты</h2>
-        <div class="contacts">
-          <h3 class="contacts-heading">Возникли вопросы? Свяжитесь с нами любым удобным для вас способом</h3>
-          <div class="contact-actions">
-            <a class="btn" href="mailto:omakeykina@gmail.com">E-mail</a>
-            <a class="btn" href="https://t.me/Olga_Makey" target="_blank" rel="noopener">Telegram</a>
-            <a class="btn btn--ghost" href="https://wa.me/79262732015" target="_blank" rel="noopener">WhatsApp</a>
+        
+        <div class="contacts-wrapper">
+          <div class="contacts-main">
+            <h3 class="contacts-heading">Возникли вопросы? Свяжитесь с нами любым удобным для вас способом</h3>
+            
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon">📧</div>
+                <div class="method-info">
+                  <div class="method-label">E-mail</div>
+                  <a href="mailto:omakeykina@gmail.com" class="method-value">omakeykina@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">✈️</div>
+                <div class="method-info">
+                  <div class="method-label">Telegram</div>
+                  <a href="https://t.me/Olga_Makey" target="_blank" rel="noopener" class="method-value">@Olga_Makey</a>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">💬</div>
+                <div class="method-info">
+                  <div class="method-label">WhatsApp</div>
+                  <a href="https://wa.me/79262732015" target="_blank" rel="noopener" class="method-value">+7 926 273 20 15</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <ul class="start-steps">
-            <li>Напишите нам и кратко опишите задачу</li>
-            <li>Пришлите 2–3 референса</li>
-            <li>Получите смету в 1–2 вариантах</li>
-          </ul>
-          <p class="legal"><button class="link" data-open="policy">Политика конфиденциальности</button></p>
+          
+          <div class="requisites-wrapper">
+            <h3 class="requisites-heading">Реквизиты</h3>
+            <div class="requisites-grid">
+              <div class="req-item full-width req-name">
+                <div class="req-value">ИП Макейкин Константин Владимирович</div>
+              </div>
+              <div class="req-item">
+                <div class="req-label">ОГРНИП</div>
+                <div class="req-value">313505012600011</div>
+              </div>
+              <div class="req-item">
+                <div class="req-label">ИНН</div>
+                <div class="req-value">505013255489</div>
+              </div>
+              <div class="req-item">
+                <div class="req-label">Дата регистрации</div>
+                <div class="req-value">6 мая 2013 г.</div>
+              </div>
+              <div class="req-item full-width">
+                <div class="req-label">Регистратор</div>
+                <div class="req-value">Межрайонная инспекция ФНС №23 по Московской области</div>
+              </div>
+              <div class="req-item full-width">
+                <div class="req-label">Налоговый орган</div>
+                <div class="req-value">Инспекция ФНС России по г. Мытищи Московской области</div>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        <ul class="start-steps">
+          <li>Напишите нам и кратко опишите задачу</li>
+          <li>Пришлите 2–3 референса</li>
+          <li>Получите смету в 1–2 вариантах</li>
+        </ul>
+        <p class="legal"><button class="link" data-open="policy">Политика конфиденциальности</button></p>
       </div>
     </section>
   </main>
@@ -644,28 +701,20 @@
       </div>
       
       <div class="footer-right">
-        <div class="footer-phone">8 800 222 77 65</div>
-        <div class="footer-email">info@makeinsite.ru</div>
-        
-        <div class="footer-connect">
+        <div class="footer-contact-block">
           <h4>Связаться с нами:</h4>
-          <div class="footer-messengers">
-            <a href="https://t.me/makeinsite" target="_blank" rel="noopener" aria-label="Telegram">📱</a>
-            <a href="https://wa.me/5548999999999" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+          <div class="footer-contact-buttons">
+            <a href="mailto:omakeykina@gmail.com" class="footer-contact-btn" aria-label="Email">
+              <img src="icons8-email-100.png" alt="Email">
+            </a>
+            <a href="https://t.me/Olga_Makey" target="_blank" rel="noopener" class="footer-contact-btn" aria-label="Telegram">
+              <img src="icons8-telegram-100 (1).png" alt="Telegram">
+            </a>
+            <a href="https://wa.me/79262732015" target="_blank" rel="noopener" class="footer-contact-btn" aria-label="WhatsApp">
+              <img src="icons8-whatsapp-100.png" alt="WhatsApp">
+            </a>
           </div>
         </div>
-        
-        <div class="footer-social">
-          <h4>Наши каналы:</h4>
-          <div class="footer-channels">
-            <a href="https://t.me/makeinsite" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
-            <a href="#" target="_blank" rel="noopener" aria-label="VK">VK</a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Behance">BE</a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Dribbble">DR</a>
-          </div>
-        </div>
-        
-        <button class="footer-callback">ОБРАТНЫЙ ЗВОНОК</button>
       </div>
     </div>
   </footer>
