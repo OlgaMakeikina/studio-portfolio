@@ -965,12 +965,31 @@ button{font:inherit}
 .site-footer{
   border-top:1px solid var(--border);
   padding:120px 0 80px;
-  background:rgba(26,27,58,0.6);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  background-image:url('media/6020105.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
   margin-top:0;
   position:relative;
   z-index:1;
+}
+
+.site-footer::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(15,15,35,0.5);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+  z-index:-1;
+}
+
+.footer-inner{
+  position:relative;
+  z-index:2;
 }
 
 .footer-inner{
