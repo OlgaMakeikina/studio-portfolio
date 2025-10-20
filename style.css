@@ -167,7 +167,7 @@ button{font:inherit}
 .hero-art{display:none}
 
 .section{padding:90px 0;background:transparent;position:relative;z-index:1;border:none;margin:0}
-.section-title{margin:0 0 22px;font-size:48px;letter-spacing:.2px;font-weight:700}
+.section-title{margin:0 0 8px;font-size:48px;letter-spacing:.2px;font-weight:700}
 .section-head{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;margin-bottom:14px}
 
 .cards{display:grid;gap:16px}
