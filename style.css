@@ -1457,6 +1457,9 @@ button{font:inherit}
 .team-slide-content{
   display:flex;height:100%;align-items:center;
   padding:48px;gap:48px;position:relative;
+  border:0.25px solid rgba(0,210,255,0.4);
+  border-radius:24px;
+  box-shadow:0 8px 32px rgba(0,210,255,0.3);
 }
 
 .member-avatar-section{
@@ -1646,9 +1649,10 @@ button{font:inherit}
 
 .team-cta{
   text-align:center;padding:48px 32px;
-  background:var(--surface);border:1px solid var(--border);
+  background:var(--surface);border:0.25px solid rgba(0,210,255,0.4);
   border-radius:20px;backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 8px 32px rgba(0,210,255,0.3);
 }
 
 .team-cta h3{
