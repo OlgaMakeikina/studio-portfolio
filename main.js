@@ -570,21 +570,10 @@ function attachProjectOpen(){
     btn.addEventListener('click', ()=>{
       const id = Number(btn.dataset.id);
       
-      // Проект "Лендинг Human Design" (id 9) открывается на отдельной странице
-      if (id === 9) {
+      if (id === 6) {
         window.location.href = 'project.html';
         return;
       }
-      
-      const p = portfolioData.find(x=>x.id===id);
-      if(!p) return;
-      $('#projectTitle').textContent = p.title;
-      $('#projectShort').textContent = p.short;
-      $('#projectChallenge').textContent = p.details.challenge;
-      $('#projectSolution').textContent = p.details.solution;
-      $('#projectResult').textContent = p.details.result;
-      const tags = $('#projectTags'); tags.innerHTML = p.tags.map(t=>`<li class="tag">${t}</li>`).join('');
-      $('#projectModal').showModal();
     });
   });
 }
