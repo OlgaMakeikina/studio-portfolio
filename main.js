@@ -276,7 +276,7 @@ const portfolioData = [
     description: "Современный лендинг для привлечения клиентов на консультации",
     badge: "Завершен",
     gradient: "linear-gradient(135deg, #0891b2 0%, #0ea5e9 50%, #38bdf8 100%)",
-    image: "media/hd/8.jpg",
+    image: "media/hd/5.jpg",
     tags: ["Лендинг"],
     details: { 
       challenge: "Создать доверительный лендинг для услуг Human Design с фокусом на экспертность", 
@@ -570,8 +570,17 @@ function attachProjectOpen(){
     btn.addEventListener('click', ()=>{
       const id = Number(btn.dataset.id);
       
-      if (id === 6) {
-        window.location.href = 'project.html';
+      const projectPages = {
+        1: 'gomanic.html',
+        2: 'vondiga.html',
+        3: 'mastercart.html',
+        4: 'veha.html',
+        5: 'delta.html',
+        6: 'hd.html'
+      };
+      
+      if (projectPages[id]) {
+        window.location.href = projectPages[id];
         return;
       }
     });
